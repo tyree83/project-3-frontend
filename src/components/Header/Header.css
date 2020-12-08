@@ -4,8 +4,13 @@
     padding-right: 10px;
     height: 100px;
     display: flex;
-    color: mintcream;
+    align-items: center;
     justify-content: space-between;
+}
+
+.Header a {
+    text-decoration: none;
+    color: mintcream;
 }
 
 .NavLinks {

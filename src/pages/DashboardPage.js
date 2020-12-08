@@ -2,8 +2,8 @@ import '../index.css'
 
 export default function DashboardPage(props) {
     return (
-        <main>
-            <h1 className='Page'>DashboardPage</h1>
+        <main className='Page'>
+            <h1 >DashboardPage</h1>
         </main>
     )
 }

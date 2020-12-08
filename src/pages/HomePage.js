@@ -2,8 +2,8 @@ import '../index.css'
 
 export default function HomePage(props) {
     return (
-        <main>
-            <h1 className='Page'>HomePage</h1>
+        <main className='Page'>
+            <h1>HomePage</h1>
         </main>
     )
 }
