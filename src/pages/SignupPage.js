@@ -8,35 +8,35 @@ export default function SignupPage(props) {
         name: "",
         email: "",
         password: ""
-    })
+    });
 
-    function formValid(){
+    function formValid() {
         return !!(formState.name && formState.email && formState.password)
-    };
+    }
 
-    function handleChange(event){
+    function handleChange(event) {
         setFormState(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value
-        }))
-    };
+        }));
+    }
 
-    async function handleSubmit(event){
+    async function handleSubmit(event) {
         event.preventDefault();
         if(!formValid()) return;
-        try{
+        try {
             await signup(formState);
-            // calling a helper function defined in app.js to add user to state
+            props.handleSignupOrLogin();
         } catch (error) {
             alert(error.message);
         }
-    };
+    }
 
     return (
-        <main className='Page'>
+        <main className="Page">
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-          <div className="form-group">
+            <div className="form-group">
             <div className="col-sm-12">
               <input name="name" type="text" className="form-control" placeholder="Name" value={formState.name} onChange={handleChange} />
             </div>
@@ -60,5 +60,5 @@ export default function SignupPage(props) {
           </div>
         </form>
         </main>
-    )
-}
+    );
+};
