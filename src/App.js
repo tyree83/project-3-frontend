@@ -10,7 +10,8 @@ import SignupPage from './pages/SignupPage';
 
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-import { getUser } from './services/userService';
+import { getUser, logout } from './services/userService';
+
 
 import './App.css';
 
@@ -27,9 +28,15 @@ function App(props) {
     props.history.push('/dashboard');
   }
 
+  function handleLogout (){
+    logout();
+    setUserState({ user: null });
+    props.history.push('/');
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header user={ userState.user } handleLogout={ handleLogout } />
         <Switch>
           <Route exact path="/" render={ props => 
             <HomePage />
