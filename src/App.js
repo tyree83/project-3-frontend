@@ -1,9 +1,10 @@
+
 import { useState } from 'react';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-import HomePage from './pages/HomePage';
+
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -12,8 +13,8 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import { getUser, logout } from './services/userService';
 
-
 import './App.css';
+import CreatePost from './pages/CreatePost';
 
 function App(props) {
   /* component state */
@@ -28,30 +29,33 @@ function App(props) {
     props.history.push('/dashboard');
   }
 
-  function handleLogout (){
-    logout();
-    setUserState({ user: null });
+  function handleLogout() {
+    logout(); 
+    setUserState({ user: null }); 
     props.history.push('/');
   }
 
   return (
     <div className="App">
-      <Header user={ userState.user } handleLogout={ handleLogout } />
+      <Header user={userState.user} handleLogout={handleLogout} />
         <Switch>
           <Route exact path="/" render={ props => 
-            <HomePage />
+            <LoginPage handleSignupOrLogin={handleSignupOrLogin} />
           } />
-          <Route exact path="/dashboard" render={ props =>
-            getUser() ? 
-            <DashboardPage />
-            :
-            <Redirect to='/login' />
+          <Route exact path="/dashboard" render={ props => 
+            getUser() ?
+              <DashboardPage />
+              :
+              <Redirect to="/login" />
+          } />
+          <Route exact path="/create" render={ props => 
+            getUser() ?
+              <CreatePost />
+              :
+              <Redirect to="/login" />
           } />
           <Route exact path="/signup" render={ props => 
             <SignupPage handleSignupOrLogin={handleSignupOrLogin} />
-          } />
-          <Route exact path="/login" render={ props => 
-            <LoginPage handleSignupOrLogin={handleSignupOrLogin} />
           } />
         </Switch>
       <Footer />

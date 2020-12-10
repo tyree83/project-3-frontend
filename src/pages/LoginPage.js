@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { login } from '../services/userService';
+import '../index.css';
 
 export default function LoginPage(props) {
     /* component state */
@@ -50,7 +51,7 @@ export default function LoginPage(props) {
                     <div className="col-sm-12">
                         <input disabled={!formValid()} value="Login" className="form-control" type="submit"/>
                         &nbsp;&nbsp;
-                        <Link to="/">Cancel</Link>
+                        <Link className="home-btn-login" to="/signup">Create Account</Link>
                     </div>
                 </div>
             </form>

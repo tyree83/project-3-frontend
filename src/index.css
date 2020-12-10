@@ -27,3 +27,36 @@ code {
 .Page > h1 {
   margin-bottom: 50px;
 }
+
+.dashBoardPage > h1 {
+  margin-bottom: 10px;
+}
+
+/* ********** unAuth LoginPage********** */
+.home-btn-login {
+  display: flex;
+  justify-content: center ;
+  background-color: lightgray;
+  border-radius: 8px;
+  /* border: 4px double #cccccc; */
+  color: slategrey;
+  text-align: center;
+  font-size: 12px;
+}
+
+.home-btn-login:hover  {
+  display: flex;
+  justify-content: center ;
+  background-color: lightseagreen;
+  border-radius: 8px;
+  /* border: 4px double #cccccc; */
+  color: whitesmoke;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: black;
+}
+
+.form-control:hover{
+  text-decoration: green;
+}
