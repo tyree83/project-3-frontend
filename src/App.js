@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -12,6 +12,7 @@ import SignupPage from './pages/SignupPage';
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import { getUser, logout } from './services/userService';
+import { fetchPostData, addPostData } from './services/postService';
 
 import './App.css';
 import CreatePost from './pages/CreatePost';
@@ -19,8 +20,18 @@ import CreatePost from './pages/CreatePost';
 function App(props) {
   /* component state */
   const [ userState, setUserState ] = useState({ user: getUser()});
-  
+  const [ posts, setPosts ] = useState([]);
+  // const [ dashboardState, setDashboardState] = useState({ post: getPost()});
+
+  useEffect(() => {
+    if(userState.user) {
+      getPosts();
+    }
+  })
+
   /* helper functions */
+
+  /* **********user********** */
 
   function handleSignupOrLogin() {
     // place user into state using the setter function
@@ -35,6 +46,26 @@ function App(props) {
     props.history.push('/');
   }
 
+   /* **********posts********** */
+
+  function handleNewPostClick()  {
+    
+    createPost();
+    props.history.push('/dashboard');}
+
+    
+
+  async function getPosts() {
+    const data = await fetchPostData();
+    setPosts(data);
+  }
+
+  async function createPost(post) {
+    const data = await addPostData(post);
+    setPosts(data);
+  }
+
+
   return (
     <div className="App">
       <Header user={userState.user} handleLogout={handleLogout} />
@@ -44,13 +75,13 @@ function App(props) {
           } />
           <Route exact path="/dashboard" render={ props => 
             getUser() ?
-              <DashboardPage />
+              <DashboardPage {...props} posts={ posts }/*handleNewPost={handleNewPost}*//>
               :
               <Redirect to="/login" />
           } />
           <Route exact path="/create" render={ props => 
             getUser() ?
-              <CreatePost />
+              <CreatePost handleNewPostClick={handleNewPostClick}/>
               :
               <Redirect to="/login" />
           } />
