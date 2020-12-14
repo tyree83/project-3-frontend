@@ -1,26 +1,14 @@
-import { getToken } from './tokenService';
-
 const BASE_URL = 'http://localhost:3001/api/posts';
 
 
-export function fetchPostData() {
-  const options = {
-    method: 'GET',
-    headers: {
-      'Authorization': 'Bearer ' + getToken()
-    }
-  };
-  return fetch(BASE_URL, options).then(res => res.json());
+export function fetchPostData(){
+  return fetch(BASE_URL).then(res => res.json());
 }
 
-export function addPostData(post) {
-    const options = {
+export function addPostData(posts) {
+    return fetch(BASE_URL,{
       method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-        'Authorization': 'Bearer ' + getToken()
-      },
-      body: JSON.stringify(post)
-    };
-    return fetch(BASE_URL, options).then(res => res.json());
+      headers: new Headers({'Content-Type': 'application/json'}),
+      body: JSON.stringify(posts)  
+    }).then(res => res.json());
 }

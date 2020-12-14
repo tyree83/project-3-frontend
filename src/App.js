@@ -1,43 +1,32 @@
 
 import { useState, useEffect } from 'react';
-
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-
-
-import DashboardPage from './pages/DashboardPage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+
+import './App.css';
 
 import { getUser, logout } from './services/userService';
 import { fetchPostData, addPostData } from './services/postService';
 
-import './App.css';
-import CreatePost from './pages/CreatePost';
+
+import CreatePost from './components/CreatePost/CreatePost';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import FeedPage from './pages/FeedPage/FeedPage'
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+
 
 function App(props) {
-  /* component state */
-  const [ userState, setUserState ] = useState({ user: getUser()});
-  const [ posts, setPosts ] = useState([]);
-  // const [ dashboardState, setDashboardState] = useState({ post: getPost()});
-
-  useEffect(() => {
-    if(userState.user) {
-      getPosts();
-    }
-  })
-
   /* helper functions */
-
+  
   /* **********user********** */
+  const [ userState, setUserState ] = useState({ user: getUser()});
 
   function handleSignupOrLogin() {
     // place user into state using the setter function
     setUserState({ user: getUser() });
-    // programmatically route user to dashboard
-    props.history.push('/dashboard');
+    // programmatically route user to Feed
+    props.history.push('/feed');
   }
 
   function handleLogout() {
@@ -47,23 +36,47 @@ function App(props) {
   }
 
    /* **********posts********** */
-
-  function handleNewPostClick()  {
-    
-    createPost();
-    props.history.push('/dashboard');}
-
-    
+   const [posts, setPosts]= useState([{
+    whoPosted: "",
+    datePosted: "",
+    location: "",
+    textPost: "",
+  }])
 
   async function getPosts() {
     const data = await fetchPostData();
     setPosts(data);
   }
+  
+  // async function newPost(post) {
+  //   const data = await addPostData(post);
+  //   setPosts(data);
+  // }
 
-  async function createPost(post) {
-    const data = await addPostData(post);
-    setPosts(data);
-  }
+  useEffect(()=>{
+   getPosts()
+ },[])
+
+    function handleChange(event) {
+        setPosts(prevState => ({
+            ...prevState,
+          [event.target.name]: event.target.value
+        }));
+      }
+
+    async function handleSubmit(event){
+        try {
+            await addPostData(posts);
+            props.history.push('/feed');
+          } catch (event) {
+            console.log(addPostData)
+          }
+    }
+
+    // async function getPosts(){
+    //   const data = await fetchPostData()
+    //   setPosts(data)
+    // }
 
 
   return (
@@ -73,17 +86,18 @@ function App(props) {
           <Route exact path="/" render={ props => 
             <LoginPage handleSignupOrLogin={handleSignupOrLogin} />
           } />
-          <Route exact path="/dashboard" render={ props => 
+          <Route exact path="/feed" render={ props => 
             getUser() ?
-              <DashboardPage {...props} posts={ posts }/*handleNewPost={handleNewPost}*//>
-              :
-              <Redirect to="/login" />
+              <FeedPage {...props} posts={posts} />
+                :
+                <Redirect to="/login" />
           } />
           <Route exact path="/create" render={ props => 
             getUser() ?
-              <CreatePost handleNewPostClick={handleNewPostClick}/>
+              <CreatePost posts={posts} setPosts={setPosts} handleChange={handleChange} handleSubmit={handleSubmit} {...props}/>
               :
               <Redirect to="/login" />
+              
           } />
           <Route exact path="/signup" render={ props => 
             <SignupPage handleSignupOrLogin={handleSignupOrLogin} />
