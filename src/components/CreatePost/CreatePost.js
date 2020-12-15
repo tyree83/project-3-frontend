@@ -27,7 +27,7 @@ export default function CreatePost(props) {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <input className="adjinput" type='text' placeholder='let people know how your day was' name='textPost' value={props.posts.texPost} onChange={props.handleChange} required/>
+                                <input className="postInfo"type='text' placeholder='let people know how your day was' name='textPost' value={props.posts.texPost} onChange={props.handleChange} required/>
                             </div>
                         </div>
                         {/* <div className="form-group">
@@ -37,7 +37,7 @@ export default function CreatePost(props) {
                         </div> */}
                         <div className="form-group">
                             <div className="col-sm-12 text-center">
-                                <Link to="/feed">Fight Feed</Link>&nbsp;&nbsp;
+                                <Link to="/feed">Add Post</Link>&nbsp;&nbsp;
                                 <Link to='/feed'>Cancel</Link>
                             </div>
                         </div>

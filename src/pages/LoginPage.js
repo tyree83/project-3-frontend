@@ -33,7 +33,8 @@ export default function LoginPage(props) {
     }
     return (
         <main className="Page">
-            <h1>LoginPage</h1>
+            <h1>Welcome to the Fight Forum</h1>
+            <p>Login Below</p>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <div className="col-sm-12">
