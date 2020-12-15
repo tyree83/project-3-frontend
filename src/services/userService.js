@@ -1,6 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'https://git.heroku.com/p3-backend.git/api/users';
+const BASE_URL = 'https://p3-backend.herokuapp.com/api/users';
 
 function signup(user) {
     return fetch(BASE_URL + '/signup', {
