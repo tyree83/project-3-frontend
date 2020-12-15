@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Fight Club Feed
+a simple web application where you can post your thoughts, as well as see the members in your groups posts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies Used
+* React.js
+* Jquery
+* HTML 5
+* CSS3
+* JavaScript
+* Node.js
+* Express
+* Bootstrap
+* Mongoose/MongoDB
+* Trello Board
+* Wireframe
+* ZiteBoard
+* Heroku
 
-## Available Scripts
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+# Trello
+![Trello](src/Images/trello.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# ERD
 
-### `npm test`
+![ERD](src/Images/erd.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# WireFrame
 
-### `npm run build`
+![Wireframe](src/Images/wireframe.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screenshot](src/Images/login.png)
+![Screenshot](src/Images/signuppage.png)
+![Screenshot](src/Images/feed.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Getting started
+<a href="https://my-gardening-app.herokuapp.com/">Click here to see the deployed app!</a>
 
-### `npm run eject`
+### Future Items
+Future Enhancements
+user profile page
+enable the user to comment and react to posts
+post videos, pictures, etc.
+enable user to save a movie/show as favorite.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Explanation
+used React.js to make a SPA. in order to make the app more response without refresing. used components to structure and style the entire page.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+used Express.js, mongoDB and mongoose to set up my database. users are able to register and save their information in the DB. passwords are encrypted and Salted.
 
-## Learn More
+Approach
+-I use the trello board to design the approach a user would take once inside the app. I was able to design it with a wireframe. With those two ready I was able to move forward with my React.js and Express.js to input my functionalities. following the wireframe design i was able to stylized my page according to how i planned.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
