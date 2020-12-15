@@ -2,9 +2,11 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-bottom: 50px;
-    height:auto;
-    width: 50%;
+    margin-bottom: 50px;   
+  }
+
+  .Feed >h1{
+    font-family: fantasy;
   }
   
   .cancel {
@@ -17,16 +19,26 @@
   }
 
   .card {
-
-    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 1;
     height: auto;
     border-radius: 12px;
     margin: 10px;
     border: 1px solid slategray;
     box-shadow: 1px 1px 12px 1px lightslategray;
-    font-size: 30px;
+    text-transform: capitalize;
+    background-color: black;
 }
 
-.card:hover {
-    box-shadow: 1px 1px 15px 1px var(--shadow-gray-dark);
+.cardIndex {
+  padding: 1;
+  background-color: whitesmoke;
+  height: auto;
+  border-radius: 12px;
+  margin: 10px;
+  border: 1px solid slategray;
+  box-shadow: 1px 1px 12px 1px lightslategray;
 }

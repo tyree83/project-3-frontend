@@ -23,6 +23,7 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: silver;
 }
 .Page > h1 {
   margin-bottom: 50px;
