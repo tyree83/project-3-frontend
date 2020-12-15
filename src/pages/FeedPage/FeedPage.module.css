@@ -17,9 +17,7 @@
   }
 
   .card {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+
     width: 50%;
     height: auto;
     border-radius: 12px;
