@@ -37,11 +37,8 @@ button:hover{
 }
 
 .adjinput{
-    word-wrap: normal;
-    max-height:500px !important;
-    line-height: 500px;
     max-width:200px !important;
-    width:200px;
+    width:40px;
     min-width:40px;
     font-size:24px;
 }
