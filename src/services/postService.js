@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/api/posts';
+const BASE_URL = 'https://p3-backend.herokuapp.com/api/posts';
 
 
 export function fetchPostData(){
