@@ -38,7 +38,7 @@ a simple web application where you can post your thoughts, as well as see the me
 ![Screenshot](src/Images/feed.png)
 
 ### Getting started
-<a href="https://my-gardening-app.herokuapp.com/">Click here to see the deployed app!</a>
+<a href="https://p3-frontend.herokuapp.com/">Click here to see the deployed app!</a>
 
 ### Future Items
 Future Enhancements
