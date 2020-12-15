@@ -12,7 +12,7 @@ export default function Header(props) {
                     {
                         props.user ?
                         <>
-                            <li><Link to="/feed">Family Feed</Link></li>
+                            <li><Link to="/feed">Fight Feed</Link></li>
                             <li><Link to="/create">Create Post</Link></li>
                             <li><Link to="" onClick={props.handleLogout}>Logout</Link></li>
                         </>

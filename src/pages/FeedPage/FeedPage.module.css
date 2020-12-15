@@ -3,6 +3,8 @@
     flex-flow: column nowrap;
     align-items: center;
     margin-bottom: 50px;
+    height:auto;
+    width: 50%;
   }
   
   .cancel {
@@ -11,34 +13,22 @@
   }
   
   .table {
-    width: 380px;
+    width: 50%;
   }
 
   .card {
-    width: 300px;
-    height: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 50%;
+    height: auto;
     border-radius: 12px;
     margin: 10px;
-    border: 1px solid var(--primary-brand-color);
-    box-shadow: 1px 1px 12px 1px var(--shadow-gray-light);
+    border: 1px solid slategray;
+    box-shadow: 1px 1px 12px 1px lightslategray;
     font-size: 30px;
-    text-transform: capitalize;
 }
 
 .card:hover {
     box-shadow: 1px 1px 15px 1px var(--shadow-gray-dark);
-}
-
-#collection {
-    flex-wrap: wrap;
-}
-
-.outline {
-    border: 1px dotted var(--secondary-brand-color);
-}
-
-.flex-ctr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

@@ -30,14 +30,14 @@ export default function CreatePost(props) {
                                 <input className="adjinput" type='text' placeholder='let people know how your day was' name='textPost' value={props.posts.texPost} onChange={props.handleChange} required/>
                             </div>
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <div className="col-sm-12">
                                 <input type='text' placeholder='upload avatar' name='imgURL' value={props.posts.imgURL} onChange={props.handleChange} required/>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <div className="col-sm-12 text-center">
-                                <button className="btn btn-default">Add Post</button>&nbsp;&nbsp;
+                                <Link to="/feed">Fight Feed</Link>&nbsp;&nbsp;
                                 <Link to='/feed'>Cancel</Link>
                             </div>
                         </div>
