@@ -27,11 +27,21 @@
 legend{
     background-color: #282c34;
     color: white;
-    width: 150px;
+    width: 325px;
     border-radius: 5px;
 }
 
 button:hover{
     border: 1px solid #282c34;
     box-shadow: 0px 1px 10px #798389;
+}
+
+.adjinput{
+    word-wrap: normal;
+    max-height:500px !important;
+    line-height: 500px;
+    max-width:200px !important;
+    width:200px;
+    min-width:40px;
+    font-size:24px;
 }

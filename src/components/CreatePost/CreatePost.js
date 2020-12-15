@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 
 import './CreatePost.css'
 
+
 export default function CreatePost(props) {
-   
-    
     return (
         <main className='Page'>
             <div>
@@ -18,7 +17,7 @@ export default function CreatePost(props) {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <input type='text' placeholder='Todays Date' name='datePosted' value={props.posts.datePosted} onChange={props.handleChange} required/>
+                                <input type='date' placeholder='Todays Date' name='datePosted' value={props.posts.datePosted} onChange={props.handleChange} required/>
                             </div>
                         </div>
                         <div className="form-group">
@@ -28,7 +27,12 @@ export default function CreatePost(props) {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <input type='text' placeholder='let people know how your day was' name='textPost' value={props.posts.texPost} onChange={props.handleChange} required/>
+                                <input className="adjinput" type='text' placeholder='let people know how your day was' name='textPost' value={props.posts.texPost} onChange={props.handleChange} required/>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="col-sm-12">
+                                <input type='text' placeholder='upload avatar' name='imgURL' value={props.posts.imgURL} onChange={props.handleChange} required/>
                             </div>
                         </div>
                         <div className="form-group">

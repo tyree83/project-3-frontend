@@ -41,6 +41,8 @@ function App(props) {
     datePosted: "",
     location: "",
     textPost: "",
+    imgURL: '',
+
   }])
 
   async function getPosts() {
@@ -48,11 +50,6 @@ function App(props) {
     setPosts(data);
   }
   
-  // async function newPost(post) {
-  //   const data = await addPostData(post);
-  //   setPosts(data);
-  // }
-
   useEffect(()=>{
    getPosts()
  },[])
@@ -72,12 +69,6 @@ function App(props) {
             console.log(addPostData)
           }
     }
-
-    // async function getPosts(){
-    //   const data = await fetchPostData()
-    //   setPosts(data)
-    // }
-
 
   return (
     <div className="App">

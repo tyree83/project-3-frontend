@@ -1,30 +1,29 @@
 import { Link } from 'react-router-dom';
+// import FeedModule from '../../components/FeedModule/FeedModule';
 import styles from './FeedPage.module.css';
+
 
 
 export default function FeedPage (props) {
   
     const feed = props.posts.map((post, idx) => (
-      <tr key={idx}>
-      <td><span className="badge">{idx + 1}</span></td>
-      <td>{post.whoPosted}</td>
-      <td>{post.datePosted}</td>
-      <td>{post.location}</td>
-      <td>{post.textPost}</td>
-    </tr>
+      <div key={idx}>
+      {/* <td><span className="badge">{idx}</span></td> */}
+      <p>{post.whoPosted}&nbsp;<em>says</em>&nbsp;Date:{post.datePosted}&nbsp;{post.location}</p>
+      <p>{post.imgURL}</p>
+      <h6>{post.textPost}</h6>
+    </div>
     ));
     return (
       <div className={styles.Feed}>
-        <header className='header-footer'>Feed</header>
+        <h1 className='header-footer'>Feed</h1>
         {props.posts.length ? 
-          <table className={`${styles.table} table text-info`}>
-            <thead>
-              <tr><th width={80}>#</th><th width={100}>Initials</th><th width={100}>Guesses</th><th>Seconds</th></tr>
-            </thead>
-            <tbody>
+          <div className={`${styles.table} table text-info`}>
+           
+            <div className='card'>
               {feed}
-            </tbody>
-          </table>
+            </div>
+          </div>
           :
           <h4 className='text-info'>No Feed Yet</h4>
         }
